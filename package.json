@@ -1,0 +1,19 @@
+{
+  "name": "jsl-ui-plus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/jsl-ui-plus.umd.js", 
+  "module": "dist/jsl-ui-plus.es", 
+  "types": "dist/index.d.ts", 
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.2",
+    "vite": "^5.4.0",
+    "vite-plugin-dts": "^4.0.1"
+  }
+}
