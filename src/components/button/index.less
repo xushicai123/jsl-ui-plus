@@ -1,3 +1,83 @@
-.btn{
-  background-color: blue;
+.jsl-button {
+  outline: none;
+  border: none;
+  border-radius: var(--jsl-radius-md);
+  cursor: pointer;
+  user-select: none;
+  background: var(--background);
+  &:not(:last-child) {
+    margin-right: var(--jsl-padding-md);
+  }
+  &:active {
+    opacity: var(--jsl-active-opacity);
+  }
+
+  // 大小相关
+  &--large {
+    height: var(--jsl-button-large-height);
+    font-size: var(--jsl-font-size-lg);
+    padding: var(--jsl-button-large-padding);
+  }
+  &--normal {
+    height: var(--jsl-button-normal-height);
+    font-size: var(--jsl-font-size-md);
+    padding: var(--jsl-button-normal-padding);
+  }
+  &--small {
+    height: var(--jsl-button-small-height);
+    font-size: var(--jsl-font-size-sm);
+    padding: var(--jsl-button-small-padding);
+  }
+  &--mini {
+    height: var(--jsl-button-mini-height);
+    font-size: var(--jsl-font-size-xs);
+    padding: var(--jsl-button-mini-padding);
+  }
+
+  // 类型相关
+  &--default {
+    --background: var(--jsl-button-default-bg-color);
+    color: var(--jsl-button-default-font-color);
+    border: var(--jsl-border-width) solid var(--jsl-gray-4);
+  }
+  &--primary {
+    --background: var(--jsl-button-primary-bg-color);
+    color: var(--jsl-button-primary-font-color);
+    border: var(--jsl-border-width) solid var(--jsl-button-primary-bg-color);
+  }
+  &--success {
+    --background: var(--jsl-button-success-bg-color);
+    color: var(--jsl-button-success-font-color);
+    border: var(--jsl-border-width) solid var(--jsl-button-success-bg-color);
+  }
+  &--warning {
+    --background: var(--jsl-button-warning-bg-color);
+    color: var(--jsl-button-warning-font-color);
+    border: var(--jsl-border-width) solid var(--jsl-button-warning-bg-color);
+  }
+  &--danger {
+    --background: var(--jsl-button-danger-bg-color);
+    color: var(--jsl-button-danger-font-color);
+    border: var(--jsl-border-width) solid var(--jsl-button-danger-bg-color);
+  }
+  &--color {
+    background: var(--jsl-customize-button-color);
+    color: var(--jsl-white);
+  }
+  &--plain {
+    background: transparent;
+    border-color: var(--jsl-customize-button-color, var(--background));
+    color: var(--jsl-customize-button-color, var(--background));
+  }
+
+  &--round {
+    border-radius: var(--jsl-radius-max);
+  }
+  &--disabled {
+    opacity: var(--jsl-disabled-opacity);
+    cursor: not-allowed;
+    &:active {
+      opacity: var(--jsl-disabled-opacity);
+    }
+  }
 }

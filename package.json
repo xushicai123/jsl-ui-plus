@@ -6,10 +6,11 @@
   "module": "dist/jsl-ui-plus.es",
   "types": "dist/index.d.ts",
   "scripts": {
+    "dev": "npx nodemon",
     "build": "vite build && npm run type",
     "type": "node ./scripts/buildType.js",
     "link": "npm run build && npm link",
-    "test":"npm run link && cd ../jsl-ui-plus-test && npm link jsl-ui-plus"
+    "test": "npm run link && cd ../jsl-ui-plus-test && npm link jsl-ui-plus"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
     "less": "^4.2.0",
+    "nodemon": "^3.1.4",
     "vite": "^5.4.0",
     "vite-plugin-dts": "^4.0.1"
   }

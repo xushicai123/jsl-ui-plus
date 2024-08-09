@@ -1,0 +1,5 @@
+{
+  "watch": ["src"],
+  "ext": "ts,js,vue,less,css",
+  "exec": "npm run test"
+}
