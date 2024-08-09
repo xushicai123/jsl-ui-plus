@@ -1,3 +1,8 @@
-
-import Button from "./components/Button.vue"
+import { Button } from "./components/button";
+import { App } from "vue";
 export { Button };
+export default {
+  install: (app: App) => {
+    app.use(Button);
+  },
+};

@@ -5,7 +5,9 @@ import { resolve } from 'path'; // 确保导入 resolve 函数
 
 export default defineConfig({
   plugins: [vue(), dts({
-    insertTypesEntry: true
+    insertTypesEntry: true,
+    copyDtsFiles:true,
+    staticImport:true,
   })],
   resolve: {
     alias: {

@@ -1,1 +1,0 @@
-export type AAAA = { a: 123465 };
