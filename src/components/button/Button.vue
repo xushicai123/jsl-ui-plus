@@ -16,16 +16,20 @@ const props = defineProps({
     default: "default"
   },
   plain: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   round: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   disabled: {
-    type: Boolean
+    type: Boolean,
+    default: false
   },
   color: {
-    type: String
+    type: String,
+    default: ""
   }
 })
 const emit = defineEmits(["click", "touchstart"])
