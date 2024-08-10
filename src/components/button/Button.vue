@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { PropType, computed } from 'vue';
+import { PropType, computed } from "vue";
 const props = defineProps({
   size: {
     type: String as PropType<"large" | "normal" | "small" | "mini">,
@@ -31,16 +31,16 @@ const props = defineProps({
     type: String,
     default: ""
   }
-})
-const emit = defineEmits(["click", "touchstart"])
+});
+const emit = defineEmits(["click", "touchstart"]);
 const click = () => {
-  if (props.disabled) return
+  if (props.disabled) return;
   emit("click");
-}
+};
 const touchstart = () => {
-  if (props.disabled) return
+  if (props.disabled) return;
   emit("touchstart");
-}
+};
 
 const computedClass = computed(() => {
   return [
@@ -50,14 +50,14 @@ const computedClass = computed(() => {
     props.round ? "jsl-button--round" : "",
     props.color ? "jsl-button--color" : "",
     props.disabled ? "jsl-button--disabled" : "",
-  ]
-})
+  ];
+});
 const computedStyle = computed(() => {
-  return props.color ? `--jsl-customize-button-color:${props.color}` : ""
-})
+  return props.color ? `--jsl-customize-button-color:${props.color}` : "";
+});
 </script>
 
 <script lang="ts">
-export default { name: "JslButton" }
+export default { name: "JslButton" };
 </script>
 <style scoped lang="less" src="./index.less"></style>
