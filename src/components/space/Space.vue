@@ -33,7 +33,7 @@ const props = defineProps({
   },
   fill: {
     type: Boolean,
-    default: true
+    default: false
   }
 });
 const computedClass = computed(() => {
