@@ -4,5 +4,10 @@ export const hasUnit = (value: string) => {
     /^[+-]?(\d*\.|)\d+(\s*)(px|em|rem|%|vw|vh|pt|in|cm|mm|ex|ch|vmin|vmax)$/i;
   return unitPattern.test(value);
 };
-export default (value: number | string) =>
-  hasUnit(String(value)) ? value : `${value}px`;
+export default (value: number | string) => {
+  if (value === "inherit") {
+    return value;
+  } else {
+    return hasUnit(String(value)) ? value : `${value}px`;
+  }
+};
