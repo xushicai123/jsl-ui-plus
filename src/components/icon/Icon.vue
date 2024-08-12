@@ -1,5 +1,6 @@
 <template>
-  <component :is="props.tag" :class="computedClass" :style="computedStyle"></component>
+  <img :src="props.name" v-if="isImg" class="jsl-icon-image" :style="computedStyle" />
+  <component v-else :is="props.tag" :class="computedClass" :style="computedStyle"></component>
 </template>
 
 <script setup lang="ts">
@@ -28,21 +29,23 @@ const props = defineProps({
   }
 });
 
+const isImg = computed(() => props.name?.startsWith("http"));
+
 const computedClass = computed(() => {
   return [
     props.classPrefix,
-    props.name
+    isImg.value ? "" : props.name
   ];
 });
 
 const computedStyle = computed(() => {
   return [
     `color:${props.color};`,
-    props.size == `font-size:${initializationOfNumericalUnits(props.size)};`,
+    `font-size:${initializationOfNumericalUnits(props.size)};`,
   ];
 });
 </script>
 <script lang="ts">
 export default { name: "JslIcon" };
 </script>
-<style scoped lang="less"></style>
+<style scoped lang="less" src="./index.less"></style>
