@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 4651518 */
+  font-family: "jsl-icon"; /* Project id 4651518 */
   src: url('iconfont.woff2?t=1723477214505') format('woff2'),
        url('iconfont.woff?t=1723477214505') format('woff'),
        url('iconfont.ttf?t=1723477214505') format('truetype');
 }
 
 .jsl-icon {
-  font-family: "iconfont" !important;
+  font-family: var(--jsl-icon-font-family) !important;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
