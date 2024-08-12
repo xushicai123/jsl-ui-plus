@@ -36,6 +36,7 @@
   --jsl-radius-max: 999px;
 
   .jsl-button();
+  .jsl-overlay();
 }
 .jsl-button() {
   --jsl-button-default-bg-color: var(--jsl-white);
@@ -59,4 +60,8 @@
   --jsl-button-normal-padding: 0 var(--jsl-padding-md);
   --jsl-button-small-padding: 0 var(--jsl-padding-sm);
   --jsl-button-mini-padding: 0 var(--jsl-padding-xs);
+}
+.jsl-overlay() {
+  --jsl-overlay-z-index: 1;
+  --jsl-overlay-background: rgba(0, 0, 0, 0.7);
 }
