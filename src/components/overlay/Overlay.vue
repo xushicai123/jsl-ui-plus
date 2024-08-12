@@ -1,13 +1,14 @@
 <template>
   <transition name="jsl-fade" @enter="enter" @after-leave="afterLeave">
-    <div class="jsl-overlay" v-if="props.show">
+    <div class="jsl-overlay" v-if="props.show" :style="computedStyle">
       <slot></slot>
     </div>
   </transition>
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUpdated, onActivated, onDeactivated, nextTick } from "vue";
+import fliterDuration from "@/utils/fliterDuration";
+import { onMounted, onUpdated, onActivated, onDeactivated, nextTick, computed } from "vue";
 const props = defineProps({
   show: {
     type: Boolean,
@@ -20,10 +21,22 @@ const props = defineProps({
     type: [Number, String],
     default: 0.3
   },
+  lockScroll: {
+    type: Boolean,
+    default: true
+  }
 });
 
-
+const computedStyle = computed(() => {
+  return [
+    props.zIndex ? `z-index:${props.zIndex}` : "",
+    `transition-duration: ${fliterDuration(props.duration)}`
+  ];
+});
+// 检测页面元素，
 const detectingElements = () => {
+  // 检测是否锁定滚动
+  if (!props.lockScroll) return;
   nextTick(() => {
     if (document.querySelector(".jsl-overlay")) {
       document.querySelector("html")?.classList.add("jsl-overflow-hidden");
