@@ -10,7 +10,7 @@
         <slot></slot>
         <Icon :class-prefix="props.iconPrefix" :name="props.closeIcon"
           :class="['jsl-popup-cross-icon', `jsl-popup-cross-icon-${closeIconPosition}`]" v-if="props.closeable"
-          @click="close; emits('click-close-icon')"></Icon>
+          @click="close(); emits('click-close-icon')"></Icon>
       </div>
     </transition>
   </div>
