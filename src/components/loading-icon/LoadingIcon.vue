@@ -10,7 +10,7 @@
           :style="`transform: rotate(${360 / 12 * item}deg); opacity: ${1 - 0.6 / 12 * item};`"></span>
       </div>
     </div>
-    <div v-if="$slots.default && $slots.default.length > 0" class="jsl-loading-text" :style="computedTextStyle">
+    <div v-if="hasTextSlot" class="jsl-loading-text" :style="computedTextStyle">
       <slot></slot>
     </div>
   </div>
@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import initializationOfNumericalUnits from "@/utils/initializationOfNumericalUnits";
-import { computed, PropType } from "vue";
+import { computed, PropType, useSlots } from "vue";
 
 const props = defineProps({
   color: {
@@ -53,6 +53,14 @@ const computedTextStyle = computed(() => {
     props.textColor ? `color:${props.textColor};` : "",
     props.textSize ? `font-size:${initializationOfNumericalUnits(props.textSize)};` : "",
   ];
+});
+
+
+const slots = useSlots();
+
+const hasTextSlot = computed(() => {
+  const defaultSlot = slots.default ? slots.default() : [];
+  return Boolean(defaultSlot.filter(item => item.children).length);
 });
 
 </script>

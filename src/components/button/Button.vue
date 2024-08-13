@@ -1,8 +1,9 @@
 <template>
   <button class="jsl-button" :class="computedClass" :style="computedStyle" @click="click" @touchstart="touchstart">
     <slot name="loading" v-if="loading">
-      <LoadingIcon color="currentColor" class="jsl-button-loading" :size="props.loadingSize" :type="props.loadingType">
-        <template v-if="props.loadingText && false">
+      <LoadingIcon color="currentColor" text-color="currentColor" text-size="1em" class="jsl-button-loading"
+        :size="props.loadingSize" :type="props.loadingType">
+        <template v-if="props.loadingText">
           {{ props.loadingText }}
         </template>
       </LoadingIcon>
