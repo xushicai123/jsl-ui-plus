@@ -10,13 +10,14 @@
           :style="`transform: rotate(${360 / 12 * item}deg); opacity: ${1 - 0.6 / 12 * item};`"></span>
       </div>
     </div>
-    <div class="jsl-loading-text" :style="computedTextStyle">
+    <div v-if="$slots.default && $slots.default.length > 0" class="jsl-loading-text" :style="computedTextStyle">
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import initializationOfNumericalUnits from "@/utils/initializationOfNumericalUnits";
 import { computed, PropType } from "vue";
 
 const props = defineProps({
@@ -44,15 +45,16 @@ const props = defineProps({
 const computedStyle = computed(() => {
   return [
     props.color ? `color:${props.color};` : "",
-    props.size ? `font-size:${props.size};` : "",
+    props.size ? `width:${initializationOfNumericalUnits(props.size)};height:${initializationOfNumericalUnits(props.size)};` : "",
   ];
 });
 const computedTextStyle = computed(() => {
   return [
     props.textColor ? `color:${props.textColor};` : "",
-    props.textSize ? `font-size:${props.textSize};` : "",
+    props.textSize ? `font-size:${initializationOfNumericalUnits(props.textSize)};` : "",
   ];
 });
+
 </script>
 <script lang="ts">
 export default { name: "JslLoadingIcon" };

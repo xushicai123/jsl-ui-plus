@@ -1,11 +1,19 @@
 <template>
   <button class="jsl-button" :class="computedClass" :style="computedStyle" @click="click" @touchstart="touchstart">
-    <slot></slot>
+    <slot name="loading" v-if="loading">
+      <LoadingIcon color="currentColor" class="jsl-button-loading" :size="props.loadingSize" :type="props.loadingType">
+        <template v-if="props.loadingText && false">
+          {{ props.loadingText }}
+        </template>
+      </LoadingIcon>
+    </slot>
+    <slot v-else></slot>
   </button>
 </template>
 
 <script setup lang="ts">
 import { PropType, computed } from "vue";
+import LoadingIcon from "../loading-icon/LoadingIcon.vue";
 const props = defineProps({
   size: {
     type: String as PropType<"large" | "normal" | "small" | "mini">,
@@ -30,6 +38,21 @@ const props = defineProps({
   color: {
     type: String,
     default: ""
+  },
+  loading: {
+    type: Boolean,
+    default: false
+  },
+  loadingText: {
+    type: String
+  },
+  loadingType: {
+    type: String as PropType<"spinner" | "circular">,
+    default: "circular"
+  },
+  loadingSize: {
+    type: [String, Number],
+    default: "var(--jsl-button-loading-icon-size)"
   }
 });
 const emit = defineEmits(["click", "touchstart"]);
@@ -50,6 +73,7 @@ const computedClass = computed(() => {
     props.round ? "jsl-button--round" : "",
     props.color ? "jsl-button--color" : "",
     props.disabled ? "jsl-button--disabled" : "",
+    props.loading ? "jsl-button--loading" : "",
   ];
 });
 const computedStyle = computed(() => {
