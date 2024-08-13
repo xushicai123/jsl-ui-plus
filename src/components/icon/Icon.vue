@@ -12,12 +12,10 @@ const props = defineProps({
     type: String
   },
   color: {
-    type: String,
-    default: "inherit"
+    type: String, //inherit
   },
   size: {
-    type: [String, Number],
-    default: "inherit"
+    type: [String, Number], //inherit
   },
   classPrefix: {
     type: String,
@@ -40,8 +38,8 @@ const computedClass = computed(() => {
 
 const computedStyle = computed(() => {
   return [
-    `color:${props.color};`,
-    `font-size:${initializationOfNumericalUnits(props.size)};`,
+    props.color ? `color:${props.color};` : "",
+    props.size ? `font-size:${initializationOfNumericalUnits(props.size)};` : "",
   ];
 });
 </script>

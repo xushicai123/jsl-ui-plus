@@ -1,0 +1,74 @@
+.jsl-popup {
+  position: fixed;
+  background-color: var(--jsl-popup-background);
+  &-center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    &.jsl-popup-round {
+      border-radius: var(--jsl-popup-round-radius);
+    }
+  }
+  &-left {
+    height: 100%;
+    left: 0;
+    top: 0;
+    &.jsl-popup-round {
+      border-radius: 0 var(--jsl-popup-round-radius)
+        var(--jsl-popup-round-radius) 0;
+    }
+  }
+  &-right {
+    height: 100%;
+    right: 0;
+    top: 0;
+    &.jsl-popup-round {
+      border-radius: var(--jsl-popup-round-radius) 0 0
+        var(--jsl-popup-round-radius);
+    }
+  }
+  &-bottom {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    &.jsl-popup-round {
+      border-radius: var(--jsl-popup-round-radius) var(--jsl-popup-round-radius)
+        0 0;
+    }
+  }
+  &-top {
+    width: 100%;
+    left: 0;
+    top: 0;
+    &.jsl-popup-round {
+      border-radius: 0 0 var(--jsl-popup-round-radius)
+        var(--jsl-popup-round-radius);
+    }
+  }
+
+  // 图标
+  &-cross-icon {
+    position: absolute;
+    font-size: var(--jsl-popup-close-icon-size);
+    color: var(--jsl-popup-close-icon-color);
+    z-index: var(--jsl-popup-close-icon-z-index);
+    cursor: pointer;
+    user-select: none;
+    &-top-left {
+      top: var(--jsl-popup-close-icon-margin);
+      left: var(--jsl-popup-close-icon-margin);
+    }
+    &-top-right {
+      top: var(--jsl-popup-close-icon-margin);
+      right: var(--jsl-popup-close-icon-margin);
+    }
+    &-bottom-left {
+      bottom: var(--jsl-popup-close-icon-margin);
+      left: var(--jsl-popup-close-icon-margin);
+    }
+    &-bottom-right {
+      bottom: var(--jsl-popup-close-icon-margin);
+      right: var(--jsl-popup-close-icon-margin);
+    }
+  }
+}
