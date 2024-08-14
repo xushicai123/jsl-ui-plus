@@ -17,9 +17,9 @@
 </template>
 
 <script setup lang="ts">
-import Overlay from "@/components/overlay/Overlay.vue";
+import Overlay from "../overlay/Overlay.vue";
 import fliterDuration from "@/utils/fliterDuration";
-import Icon from "@/components/icon/Icon.vue";
+import Icon from "../icon/Icon.vue";
 import { computed, onMounted, onUnmounted, PropType, watch } from "vue";
 const POSITION_TRANSITION_NAME = {
   top: "jsl-top",

@@ -5,11 +5,23 @@ import { Icon } from "./components/icon";
 import { Popup } from "./components/popup";
 import { Image } from "./components/image";
 import { LoadingIcon } from "./components/loading-icon";
+import { Form } from "./components/form";
+import { FormItem } from "./components/form-item";
 import "./assets/css/theme.less";
 import "./assets/icon/iconfont.css";
 import "./assets/css/base.less";
 import { App } from "vue";
-export { Button, Space, Overlay, Icon, Popup, LoadingIcon, Image };
+export {
+  Button,
+  Space,
+  Overlay,
+  Icon,
+  Popup,
+  LoadingIcon,
+  Image,
+  Form,
+  FormItem,
+};
 export default {
   install: (app: App) => {
     app.use(Button);
@@ -19,5 +31,7 @@ export default {
     app.use(Popup);
     app.use(LoadingIcon);
     app.use(Image);
+    app.use(Form);
+    app.use(FormItem);
   },
 };
