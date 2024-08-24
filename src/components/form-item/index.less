@@ -1,8 +1,8 @@
 .jsl-form-item {
   margin-bottom: 18px;
+  font-size: 14px;
   &-left {
     display: flex;
-    align-items: center;
     .jsl-form-item-content {
       flex: 1;
     }
@@ -10,6 +10,22 @@
       box-sizing: border-box;
       padding-right: 12px;
       width: 6.2em;
+      height: 32px;
+      line-height: 32px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
+  }
+  &-content {
+    position: relative;
+  }
+  &-required {
+    color: red;
+  }
+  &-error {
+    color: red;
+    position: absolute;
+    font-size: 12px;
   }
 }

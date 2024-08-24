@@ -7,6 +7,7 @@ import { Image } from "./components/image";
 import { LoadingIcon } from "./components/loading-icon";
 import { Form } from "./components/form";
 import { FormItem } from "./components/form-item";
+import { Input } from "./components/input";
 import "./assets/css/theme.less";
 import "./assets/icon/iconfont.css";
 import "./assets/css/base.less";
@@ -21,6 +22,7 @@ export {
   Image,
   Form,
   FormItem,
+  Input,
 };
 export default {
   install: (app: App) => {
@@ -33,5 +35,6 @@ export default {
     app.use(Image);
     app.use(Form);
     app.use(FormItem);
+    app.use(Input);
   },
 };

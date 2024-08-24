@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2016",
+    "lib": [
+      "es2016",
+      "dom"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "declaration": true,
@@ -13,9 +17,17 @@
     "resolveJsonModule": true,
     "baseUrl": "",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
