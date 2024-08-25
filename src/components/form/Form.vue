@@ -36,10 +36,6 @@ const props = defineProps({
     type: [Boolean, String] as PropType<boolean | "auto">,
     default: undefined
   },
-  scrollToError: {
-    type: Boolean,
-    default: undefined
-  },
   showError: {
     type: Boolean,
     default: undefined

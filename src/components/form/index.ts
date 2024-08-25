@@ -14,7 +14,6 @@ export type FormProps = {
   readonly disabled: boolean;
   readonly readonly: boolean;
   readonly required: boolean | "auto";
-  readonly scrollToError: boolean;
   readonly showError: boolean;
   readonly showErrorMessage: boolean;
   readonly submitOnEnter: boolean;
